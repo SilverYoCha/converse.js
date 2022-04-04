@@ -17,7 +17,7 @@ export default class MessageForm extends ElementView {
         this.listenTo(this.model.messages, 'change:correcting', this.onMessageCorrecting);
         this.listenTo(this.model, 'change:composing_spoiler', () => this.render());
 
-        this.handleEmojiSelection = ({ detail }) => this.insertIntoTextArea(
+        this.handleEmojiSelection = ({ detail }) => this.getAttribute('jid') === detail.jid && this.insertIntoTextArea(
             detail.value,
             detail.autocompleting,
             false,
