@@ -221,7 +221,8 @@ export default {
              *     If true, fetch all features from the XMPP server instead of restoring them from cache
              * @example _converse.api.disco.entities.create(jid, {'ignore_cache': true});
              */
-            create (jid, options) {
+            create (jid, options = {}) {
+                options.ignore_cache = true;
                 return _converse.disco_entities.create({'jid': jid}, options);
             }
         },
