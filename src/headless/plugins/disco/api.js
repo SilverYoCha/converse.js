@@ -222,6 +222,7 @@ export default {
              * @example _converse.api.disco.entities.create(jid, {'ignore_cache': true});
              */
             create (jid, options) {
+                options.ignore_cache = true;
                 return _converse.disco_entities.create({'jid': jid}, options);
             }
         },

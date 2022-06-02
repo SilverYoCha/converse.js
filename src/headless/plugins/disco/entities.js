@@ -9,6 +9,7 @@ const DiscoEntities = Collection.extend({
     fetchEntities () {
         return new Promise((resolve, reject) => {
             this.fetch({
+                ignore_cache: true,
                 add: true,
                 success: resolve,
                 error (_m, e) {
